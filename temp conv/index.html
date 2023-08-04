@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css">
+    <title>My Temperature Converter Website</title>
+  </head>
+  <body>
+    
+    <h1 class="head">Temperature Convertor Website</h1>
+    <main>
+      <form id="form">
+        <label class="label"
+          >Degree
+          <input
+            type="text"
+            id="degrees"
+            pattern="[0-9\.]+"
+            required
+            title="Numbers Only"
+          />
+        </label>
+        <label class="label"
+          >Temp Type
+          <select name="type" id="type" required>
+            <option value="c" selected>Celsius</option>
+            <option value="f">Fahrenheit</option>
+            <option value="k">Kelvin</option>
+          </select>
+        </label>
+        <button class="convert">Convert</button>
+      </form>
+      <p class="label">Result</p>
+      <p class="result" id="resultOne"></p>
+      <p class="result" id="resultTwo"></p>
+    </main>
+    <script>
+      const form = document.querySelector("#form");
+      console.log("");
+      form.addEventListener("submit", (e) => {
+        console.log("HEloo2");
+        e.preventDefault();
+        console.log("HEloo3");
+        const resultOne = document.querySelector("#resultOne");
+        const resultTwo = document.querySelector("#resultTwo");
+        let type = document.querySelector("#type").value;
+        let degrees = document.querySelector("#degrees").value;
+        degrees = parseFloat(degrees);
+        if (type === "c") {
+          console.log("");
+          console.log(convertToFahrenheit(degrees, "c"));
+          console.log(convertToKelvin(degrees, "c"));
+          resultOne.innerText = convertToFahrenheit(degrees, "c");
+          resultTwo.innerText = convertToKelvin(degrees, "c");
+        } else if (type === "f") {
+          console.log("");
+          console.log(convertTocelsius(degrees, "c"));
+          console.log(convertToKelvin(degrees, "c"));
+          resultOne.innerText = convertTocelsius(degrees, "f");
+          resultTwo.innerText = convertToKelvin(degrees, "f");
+        } else {
+          console.log("");
+          console.log(convertTocelsius(degrees, "c"));
+          console.log(convertToFahrenheit(degrees, "c"));
+          resultOne.innerText = convertTocelsius(degrees, "k");
+          resultTwo.innerText = convertToFahrenheit(degrees, "k");
+        }
+      });
+      const convertTocelsius = (value, from) => {
+        if (from === "f") {
+          return `${((value - 32) * (5 / 9)).toFixed(2)} *C`;
+        } else {
+          return `${(value - 273.15).toFixed(2)} *C`;
+        }
+      };
+      const convertToFahrenheit = (value, from) => {
+        if (from === "c") {
+          return `${(value * 1.8 + 32).toFixed(2)} *F`;
+        } else {
+          return `${((value * 9) / 5 - 459.67).toFixed(2)} *F`;
+        }
+      };
+      const convertToKelvin = (value, from) => {
+        if (from === "f") {
+          return `${((value + 459.67) * (5 / 9)).toFixed(2)} *K`;
+        } else {
+          return `${(value + 273.15).toFixed(2)} *K`;
+        }
+      };
+    </script>
+
+  </body>
+</html>

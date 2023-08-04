@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html,
+  body {
+    height: 100%;
+  }
+  body {
+    display: grid;
+    place-content: center;
+    background: url(/image/TEMPf.png);
+    background-color: #030303;
+  }
+  main {
+    border-radius: 10px;
+    background-color: rgb(112, 111, 111);
+    box-shadow: 2px 2px 5px rgb(55, 56, 57);
+    padding: 2rem;
+   
+  }
+  #form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    
+
+  }
+  .convert {
+    all: unset;
+    color: rgb(25, 24, 24);
+    background-color: rgb(204, 193, 42);
+    font-size: 1.55rem;
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+  }
+  input,
+ select {
+    margin-block-end: 2rem;
+    font-size: 1.25rem;
+  }
+  .label {
+    color: #080808;
+    font-size: 1.25rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+
+  }
+  .label {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .result {
+    font-size: 1.4rem;
+    font-weight: bolder;
+    color: rgb(204, 193, 42);
+    
+  }
+
+  .head{
+    text-align:center ;
+    color:rgb(255, 255, 255);
+    font-weight: bolder;
+    padding-bottom: 10%;
+    font-size: 3.0rem;
+
+  }
+
